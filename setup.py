@@ -14,7 +14,7 @@ setup(
     version="0.1.0",
     author="Opinfer Contributors",
     author_email="",
-    description="Optimized Inference with Adaptive Motion Gating and Queuing for Vision Transformers and VLMs",
+    description="Optimized video inference for Vision Transformers and VLMs using adaptive motion gating and frame queuing techniques. Automatically optimizes parameters for efficient real-time processing across diverse video scenarios.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ruturajdixit99/Opinfer",

@@ -1,6 +1,15 @@
 # Opinfer: Optimized Inference with Adaptive Motion Gating
 
-**Opinfer** is a Python package for efficient real-time video inference using adaptive motion-gated Vision Transformers. It automatically optimizes motion gating parameters based on video characteristics, making it effective across diverse scenarios from static traffic cameras to fast-moving drone footage.
+**Opinfer** (Optimized Inference) is a high-performance Python package designed to dramatically improve the efficiency of video inference for Vision Transformers (ViTs) and Vision-Language Models (VLMs). By intelligently analyzing video characteristics and automatically optimizing inference parameters, Opinfer reduces computational overhead while maintaining accuracy across diverse real-world scenarios—from static traffic cameras to fast-moving drone footage.
+
+## 🎯 What Makes Opinfer Special?
+
+Opinfer addresses the critical challenge of processing video streams efficiently by:
+- **Skipping redundant frames** when scene changes are minimal (motion gating)
+- **Batching frames** for optimal GPU utilization (queuing)
+- **Automatically adapting** to different video characteristics (lighting, motion patterns, scene stability)
+- **Supporting multiple model types** including ViT/DeiT classifiers and OWL-ViT detectors
+- **Providing up to 50%+ performance improvements** in real-world scenarios
 
 ## 🚀 Features
 

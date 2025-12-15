@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "opinfer"
 version = "0.1.0"
-description = "Optimized Inference with Adaptive Motion Gating and Queuing for Vision Transformers and VLMs"
+description = "Optimized video inference for Vision Transformers and VLMs using adaptive motion gating and frame queuing techniques. Automatically optimizes parameters for efficient real-time processing across diverse video scenarios."
 readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
