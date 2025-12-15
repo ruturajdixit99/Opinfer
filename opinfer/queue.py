@@ -245,10 +245,15 @@ class QueuedInference:
         if self.total_frames == 0:
             return {}
         
-        avg_batch_latency_ms = (self.total_inference_time / max(1, self.batches_processed)) * 1000.0
-        avg_queue_wait_ms = self.total_queue_wait_time / max(1, self.batches_processed)
-        frames_per_batch = self.total_frames / max(1, self.batches_processed)
-        effective_fps = 1000.0 / (avg_batch_latency_ms / frames_per_batch) if frames_per_batch > 0 else 0.0
+        batches = max(1, self.batches_processed)
+        avg_batch_latency_ms = (self.total_inference_time / batches) * 1000.0
+        avg_queue_wait_ms = self.total_queue_wait_time / batches
+        frames_per_batch = self.total_frames / batches
+        
+        if frames_per_batch > 0 and avg_batch_latency_ms > 0:
+            effective_fps = 1000.0 / (avg_batch_latency_ms / frames_per_batch)
+        else:
+            effective_fps = 0.0
         
         return {
             "total_frames": self.total_frames,
