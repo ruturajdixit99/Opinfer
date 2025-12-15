@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opinfer"
+version = "0.1.0"
+description = "Optimized Inference with Adaptive Motion Gating and Queuing for Vision Transformers and VLMs"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Opinfer Contributors"}
+]
+keywords = [
+    "computer-vision",
+    "vision-transformer",
+    "motion-gating",
+    "video-inference",
+    "optimization",
+    "vlm",
+    "vision-language-models",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "torch>=1.12.0",
+    "torchvision>=0.13.0",
+    "timm>=0.6.0",
+    "transformers>=4.20.0",
+    "opencv-python>=4.5.0",
+    "numpy>=1.21.0",
+    "Pillow>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+]
+
+[project.scripts]
+opinfer = "opinfer.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/opinfer"
+Documentation = "https://github.com/yourusername/opinfer#readme"
+Repository = "https://github.com/yourusername/opinfer"
+Issues = "https://github.com/yourusername/opinfer/issues"
+
