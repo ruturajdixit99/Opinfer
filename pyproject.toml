@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Optimized video inference for Vision Transformers and VLMs using adaptive motion gating and frame queuing techniques. Automatically optimizes parameters for efficient real-time processing across diverse video scenarios."
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "Opinfer Contributors"}
 ]
