@@ -17,7 +17,7 @@ setup(
     description="Optimized Inference with Adaptive Motion Gating and Queuing for Vision Transformers and VLMs",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/opinfer",
+    url="https://github.com/ruturajdixit99/Opinfer",
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -65,9 +65,9 @@ setup(
         "frame-queuing",
     ],
     project_urls={
-        "Bug Reports": "https://github.com/yourusername/opinfer/issues",
-        "Source": "https://github.com/yourusername/opinfer",
-        "Documentation": "https://github.com/yourusername/opinfer#readme",
+        "Bug Reports": "https://github.com/ruturajdixit99/Opinfer/issues",
+        "Source": "https://github.com/ruturajdixit99/Opinfer",
+        "Documentation": "https://github.com/ruturajdixit99/Opinfer#readme",
     },
     entry_points={
         "console_scripts": [

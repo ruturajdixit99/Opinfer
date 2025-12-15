@@ -25,7 +25,7 @@ pip install opinfer
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/opinfer.git
+git clone https://github.com/ruturajdixit99/Opinfer.git
 cd opinfer
 
 # Install in development mode

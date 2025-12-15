@@ -56,8 +56,8 @@ dev = [
 opinfer = "opinfer.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/opinfer"
-Documentation = "https://github.com/yourusername/opinfer#readme"
-Repository = "https://github.com/yourusername/opinfer"
-Issues = "https://github.com/yourusername/opinfer/issues"
+Homepage = "https://github.com/ruturajdixit99/Opinfer"
+Documentation = "https://github.com/ruturajdixit99/Opinfer#readme"
+Repository = "https://github.com/ruturajdixit99/Opinfer"
+Issues = "https://github.com/ruturajdixit99/Opinfer/issues"
 
