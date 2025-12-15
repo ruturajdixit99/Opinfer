@@ -5,7 +5,7 @@ Thank you for your interest in contributing to opinfer!
 ## 🚀 Getting Started
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/yourusername/opinfer.git`
+2. Clone your fork: `git clone https://github.com/ruturajdixit99/Opinfer.git`
 3. Install in development mode: `pip install -e ".[dev]"`
 4. Create a branch: `git checkout -b feature/your-feature`
 

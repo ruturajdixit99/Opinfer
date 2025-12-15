@@ -33,7 +33,7 @@ git commit -m "Initial release: opinfer v0.1.0"
 1. Go to GitHub and create a new repository named `opinfer`
 2. Add remote:
 ```bash
-git remote add origin https://github.com/yourusername/opinfer.git
+git remote add origin https://github.com/ruturajdixit99/Opinfer.git
 git branch -M main
 git push -u origin main
 ```
@@ -190,7 +190,7 @@ pip install opinfer
 ### From Source
 
 ```bash
-git clone https://github.com/yourusername/opinfer.git
+git clone https://github.com/ruturajdixit99/Opinfer.git
 cd opinfer
 pip install -e .
 ```

@@ -14,7 +14,7 @@ pip install opinfer
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/opinfer.git
+git clone https://github.com/ruturajdixit99/Opinfer.git
 cd opinfer
 
 # Install in development mode
@@ -68,7 +68,7 @@ pip install opinfer
 For development:
 
 ```bash
-git clone https://github.com/yourusername/opinfer.git
+git clone https://github.com/ruturajdixit99/Opinfer.git
 cd opinfer
 pip install -e ".[dev]"
 ```
