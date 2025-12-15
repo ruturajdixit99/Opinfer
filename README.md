@@ -15,30 +15,26 @@
 
 ## 📦 Installation
 
+### Install from GitHub (Recommended)
+
+```bash
+pip install git+https://github.com/ruturajdixit99/Opinfer.git
+```
+
 ### From PyPI (Once Released)
 
 ```bash
 pip install opinfer
 ```
 
-### From Source
+### From Source (Development)
 
 ```bash
 # Clone repository
 git clone https://github.com/ruturajdixit99/Opinfer.git
-cd opinfer
+cd Opinfer
 
 # Install in development mode
-pip install -e .
-
-# Or install directly
-pip install .
-```
-
-### Local Development
-
-```bash
-cd SARD/MotionGated
 pip install -e .
 ```
 
