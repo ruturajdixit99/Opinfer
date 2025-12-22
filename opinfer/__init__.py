@@ -1,10 +1,13 @@
 """
 Opinfer: Optimized Inference with Adaptive Motion Gating
-A package for efficient real-time video inference using adaptive motion-gated Vision Transformers.
-"""
 
-__version__ = "0.1.0"
-__author__ = "Opinfer Team"
+High-level API:
+    from opinfer import OptimizedInference, load_video_frames
+    
+    # Quick start
+    infer = OptimizedInference(model_name='vit_base_patch16_224')
+    result = infer.process_video_file('video.mp4')
+"""
 
 from opinfer.core import MotionGatedInference
 from opinfer.adaptive import AdaptiveMotionGater
@@ -22,4 +25,3 @@ __all__ = [
     "load_video_frames",
     "QueuedInference",
 ]
-

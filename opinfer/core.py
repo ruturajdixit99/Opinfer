@@ -128,7 +128,7 @@ class MotionGatedInference:
                     rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
                     pil_img = Image.fromarray(rgb)
                     inputs = processor(
-                        text=[", ".join(text_queries)],
+                        text=text_queries,  # Pass as list of strings, not joined
                         images=pil_img,
                         return_tensors="pt"
                     )
@@ -138,7 +138,7 @@ class MotionGatedInference:
                     results = processor.post_process_object_detection(
                         outputs=outputs,
                         target_sizes=target_sizes,
-                        threshold=0.1
+                        threshold=0.05  # Lower threshold to get more detections
                     )[0]
                     output = {
                         "boxes": results["boxes"].detach().cpu().numpy(),

@@ -45,6 +45,11 @@ htmlcov/
 
 # Documentation
 docs/_build/
+docs/node_modules/
+docs/build/
+docs/.docusaurus/
+docs/.cache-loader/
+docs/package-lock.json
 
 # OS
 .DS_Store
@@ -69,4 +74,9 @@ models/
 # Logs
 *.log
 logs/
+
+
+
+
+
 

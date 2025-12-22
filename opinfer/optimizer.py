@@ -157,7 +157,9 @@ class ParameterOptimizer:
         no_improvement_count = 0
         
         # Grid search with refinement
-        threshold_candidates = np.linspace(threshold_min, threshold_max, 10)
+        # Reduce candidate count for faster optimization if needed
+        num_threshold_candidates = 8 if self.max_iterations < 20 else 10
+        threshold_candidates = np.linspace(threshold_min, threshold_max, num_threshold_candidates)
         min_frames_candidates = [1, 2, 3, 4, 5]
         
         print(f"🔍 Starting optimization (max {self.max_iterations} iterations)...")

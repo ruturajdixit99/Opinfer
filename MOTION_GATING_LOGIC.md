@@ -559,3 +559,11 @@ def optimize_parameters(frames, target_skip_rate):
 
 This is the complete logic behind opinfer's motion gating technology!
 
+
+
+
+
+
+
+
+

@@ -4,7 +4,6 @@ Model loading utilities for various Vision Transformer architectures.
 
 import torch
 import timm
-from transformers import OwlViTProcessor, OwlViTForObjectDetection
 from typing import Union, Tuple, Optional, Dict
 
 
@@ -59,7 +58,7 @@ class ModelLoader:
     def load_detector(
         model_name: str,
         device: str = "cuda",
-    ) -> Tuple[OwlViTForObjectDetection, OwlViTProcessor]:
+    ) -> Tuple[any, any]:
         """
         Load an OWL-ViT detector model.
         
@@ -70,6 +69,15 @@ class ModelLoader:
         Returns:
             (model, processor) tuple
         """
+        # Lazy import to avoid NumPy compatibility issues if not using detectors
+        try:
+            from transformers import OwlViTProcessor, OwlViTForObjectDetection
+        except ImportError as e:
+            raise ImportError(
+                f"transformers library required for detector models. "
+                f"Install with: pip install transformers. Original error: {e}"
+            )
+        
         model_dict = dict(ModelLoader.DETECTOR_MODELS)
         if model_name not in model_dict:
             raise ValueError(

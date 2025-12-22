@@ -448,3 +448,11 @@ print(f"FPS: {results['stats']['effective_fps']:.2f}")
 
 **That's it!** You can now use opinfer with any Vision-Language Model. The package handles the optimization, you just provide your VLM model! 🚀
 
+
+
+
+
+
+
+
+

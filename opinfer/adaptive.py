@@ -24,7 +24,7 @@ class AdaptiveMotionGater:
         self,
         model: any,
         device: str = "cuda",
-        auto_optimize: bool = True,
+        auto_optimize: bool = False,  # Default: Fast start, optimization is optional
         optimization_sample_frames: int = 200,
         target_skip_rate: float = 40.0,
         processor=None,
@@ -70,11 +70,11 @@ class AdaptiveMotionGater:
             Dictionary with analysis and optimization results
         """
         print("\n" + "=" * 80)
-        print("🔬 ADAPTIVE MOTION GATING: Analysis & Optimization")
+        print("ADAPTIVE MOTION GATING: Analysis & Optimization")
         print("=" * 80)
         
         # Step 1: Analyze video characteristics
-        print("\n📊 Step 1: Analyzing video characteristics...")
+        print("\nStep 1: Analyzing video characteristics...")
         self.video_chars = self.detector.analyze_video(frames)
         
         print(f"   Motion pattern: {self.video_chars.motion_pattern}")
@@ -88,7 +88,7 @@ class AdaptiveMotionGater:
         
         # Step 2: Optimize parameters
         if self.auto_optimize:
-            print("\n⚙️  Step 2: Optimizing parameters...")
+            print("\nStep 2: Optimizing parameters...")
             
             # Use sample frames for optimization (faster)
             if len(frames) > self.optimization_sample_frames:
@@ -97,14 +97,21 @@ class AdaptiveMotionGater:
             else:
                 opt_frames = frames
             
+            # Adjust iterations based on sample size (faster for smaller samples)
+            max_iter = 50
+            patience = 10
+            if len(opt_frames) <= 30:
+                max_iter = 10  # Faster optimization for small samples
+                patience = 5
+            
             optimizer = ParameterOptimizer(
                 model=self.model,
                 frames=opt_frames,
                 device=self.device,
                 target_skip_rate=self.target_skip_rate,
                 min_skip_rate=20.0,
-                max_iterations=50,
-                patience=10,
+                max_iterations=max_iter,
+                patience=patience,
                 processor=self.processor,
                 text_queries=self.text_queries,
             )
@@ -119,18 +126,18 @@ class AdaptiveMotionGater:
             self.motion_threshold = self.optimization_result.best_threshold
             self.min_frames_between_calls = self.optimization_result.best_min_frames
             
-            print(f"\n✅ Optimized parameters:")
+            print(f"\nOptimized parameters:")
             print(f"   Motion threshold: {self.motion_threshold:.2f}")
             print(f"   Min frames between calls: {self.min_frames_between_calls}")
         else:
-            # Use recommended parameters from analysis
+            # Use recommended parameters from analysis (fast, no optimization)
             self.motion_threshold = np.mean(self.video_chars.recommended_threshold_range)
             self.min_frames_between_calls = self.video_chars.recommended_min_frames
-            print(f"\n✅ Using recommended parameters (optimization disabled):")
+            print(f"\n✅ Using recommended parameters (fast mode, no optimization):")
             print(f"   Motion threshold: {self.motion_threshold:.2f}")
             print(f"   Min frames between calls: {self.min_frames_between_calls}")
         
-        # Step 3: Create inference engine with optimized parameters
+        # Step 3: Create inference engine with parameters
         self.engine = MotionGatedInference(
             model=self.model,
             device=self.device,
@@ -173,7 +180,7 @@ class AdaptiveMotionGater:
         # Reset engine for new video
         self.engine.reset()
         
-        print("\n🎬 Processing video with optimized parameters...")
+        print("\nProcessing video with optimized parameters...")
         
         # Process all frames
         for i, frame in enumerate(frames):
@@ -193,7 +200,7 @@ class AdaptiveMotionGater:
         
         final_stats = self.engine.get_stats()
         
-        print("\n📈 Final Statistics:")
+        print("\nFinal Statistics:")
         print(f"   Total frames: {final_stats['total_frames']}")
         print(f"   Model calls: {final_stats['model_calls']}")
         print(f"   Skipped frames: {final_stats['skipped_frames']} ({final_stats['skip_rate_pct']:.1f}%)")
