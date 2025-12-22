@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - master
+      - 2025-12-22-xkve
     paths:
       - 'docs/**'
       - '.github/workflows/docs.yml'
