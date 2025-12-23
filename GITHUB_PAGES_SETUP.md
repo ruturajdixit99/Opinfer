@@ -11,8 +11,10 @@
 ### Step 1: Enable GitHub Pages
 
 1. Go to: https://github.com/ruturajdixit99/Opinfer/settings/pages
-2. Under "Source", select: **"GitHub Actions"** (NOT "Deploy from a branch")
-3. Click "Save"
+2. Under "Source", select: **"Deploy from a branch"**
+3. Branch: Select **"gh-pages"** (the workflow will create this branch automatically)
+4. Folder: Select **"/ (root)"**
+5. Click "Save"
 
 ### Step 2: Trigger the Workflow
 
