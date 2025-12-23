@@ -9,6 +9,7 @@ on:
     paths:
       - 'docs/**'
       - '.github/workflows/docs.yml'
+      - 'README.md'
   workflow_dispatch:
 
 permissions:
