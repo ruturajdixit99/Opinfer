@@ -1,6 +1,8 @@
 # Welcome to Opinfer
 
-**Opinfer** (Optimized Inference) is a high-performance Python package designed to dramatically improve the efficiency of video inference for Vision Transformers (ViTs) and Vision-Language Models (VLMs). By intelligently analyzing video characteristics and automatically optimizing inference parameters, Opinfer reduces computational overhead while maintaining accuracy across diverse real-world scenarios—from static traffic cameras to fast-moving drone footage.
+**Opinfer** (Optimized Inference) is a high-performance Python package designed to dramatically improve the efficiency of video inference for Vision Transformers (ViTs) and Vision-Language Models (VLMs).
+
+<!-- Deployment trigger --> By intelligently analyzing video characteristics and automatically optimizing inference parameters, Opinfer reduces computational overhead while maintaining accuracy across diverse real-world scenarios—from static traffic cameras to fast-moving drone footage.
 
 ## What Makes Opinfer Special?
 
